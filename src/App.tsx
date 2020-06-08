@@ -5,18 +5,31 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
-    <div style={{ height: "100%", minHeight: "100%", display: "flex", flexDirection: "column", paddingTop: "20px" }}>
+    <div
+      style={{
+        height: "100%",
+        minHeight: "100%",
+        display: "flex",
+        flexDirection: "column",
+        marginLeft: "5%",
+        marginRight: "5%",
+        borderLeft: "1px solid black",
+        borderRight: "1px solid black",
+        paddingTop: "20px",
+      }}
+    >
       <div
         style={{
           textAlign: "center",
+          borderBottom: "1px solid black",
+          paddingBottom: "20px",
         }}
       >
-        <h1>jsonify</h1>
+        <h1>jsonmi</h1>
       </div>
       <div
         style={{
           flex: "1",
-          padding: "20px 20px 20px 20px",
         }}
       >
         <JsonBox />

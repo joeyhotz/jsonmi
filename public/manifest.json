@@ -1,8 +1,8 @@
 {
-  "name": "jsonify",
-  "short_name": "jsonify",
-  "theme_color": "#0f1418",
-  "background_color": "#ffffff",
+  "name": "jsonmi",
+  "short_name": "jsonmi",
+  "theme_color": "#293242",
+  "background_color": "#293242",
   "display": "standalone",
   "scope": "/",
   "start_url": "/index.html",
