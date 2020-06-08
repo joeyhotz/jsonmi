@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import FormControl from "react-bootstrap/FormControl";
-import Alert from "react-bootstrap/Alert";
+
+const jsonBoxContentItemKey = "jsonBoxContent";
 
 function JsonBox() {
-  const [json, setJson] = useState("");
+  const savedJsonContent = localStorage.getItem(jsonBoxContentItemKey);
+  const [json, setJson] = useState(savedJsonContent || "");
   const [validJson, setValidJson] = useState(false);
 
   return (
@@ -24,24 +26,18 @@ function JsonBox() {
         onChange={(el) => {
           try {
             const jsonText = JSON.parse(el.target.value);
-            setJson(JSON.stringify(jsonText, null, 1));
+            const formattedJson = JSON.stringify(jsonText, null, 1);
+            setJson(formattedJson);
             setValidJson(true);
+            localStorage.setItem(jsonBoxContentItemKey, formattedJson);
           } catch (e) {
             setJson(el.target.value);
             setValidJson(false);
+            localStorage.setItem(jsonBoxContentItemKey, el.target.value);
           }
         }}
       />
     </>
   );
 }
-function IsJsonString(str: string) {
-  try {
-    JSON.parse(str);
-  } catch (e) {
-    return false;
-  }
-  return true;
-}
-
 export default JsonBox;
