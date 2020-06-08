@@ -3,7 +3,7 @@
   "short_name": "jsonmi",
   "theme_color": "#293242",
   "background_color": "#293242",
-  "display": "standalone",
+  "display": "fullscreen",
   "scope": "/",
   "start_url": "/index.html",
   "icons": [
