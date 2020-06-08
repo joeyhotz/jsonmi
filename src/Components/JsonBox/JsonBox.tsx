@@ -36,9 +36,10 @@ function JsonBox() {
             border: "none",
             padding: "20px",
             backgroundColor: "inherit",
-            color: "#e0e9f3",
-            fontSize: "14px",
+            color: "#dadada",
+            fontSize: "15px",
           }}
+          spellCheck={false}
           value={jsonData.content}
           onChange={(el) => {
             try {
@@ -60,6 +61,6 @@ function JsonBox() {
 }
 
 const prettifyJson = (jsonObject: object) => {
-  return JSON.stringify(jsonObject, null, 2);
+  return JSON.stringify(jsonObject, null, 4);
 };
 export default JsonBox;

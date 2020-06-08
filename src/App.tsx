@@ -14,6 +14,7 @@ function App() {
         marginLeft: "5%",
         marginRight: "5%",
         paddingTop: "20px",
+        fontFamily: '"Source Sans Pro", sans-serif',
       }}
     >
       <div
@@ -22,7 +23,7 @@ function App() {
           paddingBottom: "20px",
         }}
       >
-        <h1>jsonmi</h1>
+        <h1 style={{ fontWeight: 600 }}>jsonmi</h1>
       </div>
       <div
         style={{
