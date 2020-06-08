@@ -4,11 +4,16 @@ import Badge from "react-bootstrap/Badge";
 
 const savedJsonDataKey = "jsonBoxContent";
 
+const defaultJsonContent = { insert: "valid", json: "here" };
+
 function JsonBox() {
-  console.log("loading");
   const savedJsonDataString = localStorage.getItem(savedJsonDataKey);
   const savedJsonData = savedJsonDataString ? JSON.parse(savedJsonDataString) : null;
-  const [jsonData, setJsonData] = useState(savedJsonData ? savedJsonData : { content: "", valid: false });
+  const [jsonData, setJsonData] = useState(
+    savedJsonData && savedJsonData.content !== ""
+      ? savedJsonData
+      : { content: prettifyJson(defaultJsonContent), valid: true }
+  );
 
   return (
     <>
@@ -32,12 +37,13 @@ function JsonBox() {
             padding: "20px",
             backgroundColor: "inherit",
             color: "#e0e9f3",
+            fontSize: "14px",
           }}
           value={jsonData.content}
           onChange={(el) => {
             try {
               const jsonText = JSON.parse(el.target.value);
-              const formattedJson = JSON.stringify(jsonText, null, 1);
+              const formattedJson = prettifyJson(jsonText);
               const jsonData = { content: formattedJson, valid: true };
               setJsonData(jsonData);
               localStorage.setItem(savedJsonDataKey, JSON.stringify(jsonData));
@@ -52,4 +58,8 @@ function JsonBox() {
     </>
   );
 }
+
+const prettifyJson = (jsonObject: object) => {
+  return JSON.stringify(jsonObject, null, 2);
+};
 export default JsonBox;

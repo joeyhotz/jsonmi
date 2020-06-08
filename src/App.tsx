@@ -13,15 +13,12 @@ function App() {
         flexDirection: "column",
         marginLeft: "5%",
         marginRight: "5%",
-        borderLeft: "1px solid black",
-        borderRight: "1px solid black",
         paddingTop: "20px",
       }}
     >
       <div
         style={{
           textAlign: "center",
-          borderBottom: "1px solid black",
           paddingBottom: "20px",
         }}
       >
