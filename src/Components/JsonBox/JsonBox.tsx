@@ -45,6 +45,8 @@ function JsonBox() {
             try {
               const jsonText = JSON.parse(el.target.value);
               const formattedJson = prettifyJson(jsonText);
+              // @ts-ignore
+              firebase!.analytics().logEvent("someone_formatted_json");
               const jsonData = { content: formattedJson, valid: true };
               setJsonData(jsonData);
               localStorage.setItem(savedJsonDataKey, JSON.stringify(jsonData));
