@@ -21,9 +21,9 @@ function JsonBox() {
         <Badge
           pill
           variant="warning"
-          style={{ position: "absolute", right: "10px", top: "10px", height: "1rem", width: "1rem" }}
+          style={{ position: "absolute", right: "10px", top: "10px", height: "auto", width: "auto", color: "black" }}
         >
-          {jsonData.valid ? "" : " "}
+          {jsonData.valid ? "" : "Invalid JSON"}
         </Badge>
         <FormControl
           as="textarea"
